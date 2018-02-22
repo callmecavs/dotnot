@@ -28,7 +28,7 @@ const config = {
     {
       file: info.main,
       format: 'umd',
-      name: 'deep-access'
+      name: 'DeepAccess'
     }, {
       file: info.module,
       format: 'es'
