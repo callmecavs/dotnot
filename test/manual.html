@@ -9,8 +9,26 @@
   <body>
     <script src="../dist/deep-access.js"></script>
     <script>
-      console.log('Module assigned to window.deep-access. Logged below:')
-      console.log(deep-access)
+      console.log('Module assigned to window.DeepAccess. Logged below:')
+      console.log(DeepAccess)
+
+      const test = {
+        a: {
+          b: {
+            c: {
+              d: 1
+            }
+          }
+        },
+        e: 1
+      }
+
+      // read
+      DeepAccess(test, 'a.b')              // expect { c: { d: 1 } }
+      DeepAccess(test, 'a.b.c')            // expect { d: 1 }
+      DeepAccess(test, 'a.b.c.d')          // expect 1
+
+      // TODO: write
     </script>
   </body>
 </html>
