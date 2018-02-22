@@ -1,5 +1,5 @@
-const deep-access = () => {
+const deep = () => {
 
 }
 
-export default deep-access
+export default deep
