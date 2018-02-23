@@ -29,6 +29,11 @@ describe('deep-access', () => {
 
   it('should mutate child keys', () => {
     access.set(TEST, 'a.c', 1)
+    access.set(TEST, 'a.b.d', 1)
+    access.set(TEST, 'a.b.c.e', 1)
+
     expect(access.get(TEST, 'a.c')).to.deep.equal(1)
+    expect(access.get(TEST, 'a.b.d')).to.deep.equal(1)
+    expect(access.get(TEST, 'a.b.c.e')).to.deep.equal(1)
   })
 })
