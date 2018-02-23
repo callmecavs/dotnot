@@ -29,6 +29,7 @@ const data = {
   e: 1
 }
 
+// get (object, path) -> value
 get(data, 'a.b')             // returns { c: { d: 1 } }
 get(data, 'a.b.c')           // returns { d: 1 }
 get(data, 'a.b.c.d')         // returns 1
@@ -36,6 +37,7 @@ get(data, 'a.c')             // returns undefined
 get(data, 'a.b.d')           // returns undefined
 get(data, 'a.b.c.e')         // returns undefined
 
+// set (object, path, value) -> value
 set(data, 'a.c', 1)             // returns 1
 set(data, 'a.b.d', 1)           // returns 1
 set(data, 'a.b.c.e', 1)         // returns 1
