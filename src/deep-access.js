@@ -1,39 +1,30 @@
-const get = (obj, str, val) => {
+const get = (obj, str) => {
   // dot notation string -> array of keys
-  const keys = Array.isArray(str)
-    ? str
-    : str.split('.')
+  const keys = str.split('.')
 
   // length of keys array
   const len = keys.length
 
-  // run through keys
-  // store reference to object
+  // loop through keys updating the reference to child objects
   let current = obj
+  let name
 
-  // loop vars
-  let index
-  let key
-
-  for (index = 0; index < len; index++) {
+  for (let index = 0; index < len; index++) {
     // current key name
-    key = keys[index]
+    name = keys[index]
 
-    // exit early, if the key doesnt exist
-    if (!current[key]) {
+    // stop searching if a child object is missing
+    if (!current[name]) {
       return
     }
 
-    // update reference
-    current = current[key]
+    current = current[name]
   }
 
   return current
 }
 
 export { get }
-
-// FIXME: fill set out, backspace deep
 
 const set = (obj, str, val) => {
   // dot notation string -> array of keys
@@ -42,7 +33,7 @@ const set = (obj, str, val) => {
   // length of keys array
   const len = keys.length
 
-  // loop through keys, updating the object reference to child objects
+  // loop through keys updating the reference to child objects
   let current = obj
   let name
 
