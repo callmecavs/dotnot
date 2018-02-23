@@ -1,6 +1,6 @@
 {
   "name":        "dotnot",
-  "description": "",
+  "description": "Access object properties using dot notation.",
 
   "main":        "dist/dotnot.js",
   "module":      "dist/dotnot.module.js",
