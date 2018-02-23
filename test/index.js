@@ -15,7 +15,7 @@ const TEST = {
 /* eslint-env mocha */
 
 describe('deep-access', () => {
-  it('should read child objects', () => {
+  it('should return the value of child keys', () => {
     expect(access.get(TEST, 'a.b')).to.deep.equal({ c: { d: 1 } })
     expect(access.get(TEST, 'a.b.c')).to.deep.equal({ d: 1 })
     expect(access.get(TEST, 'a.b.c.d')).to.deep.equal(1)
