@@ -28,8 +28,13 @@ const deep = (obj, dots, value) => {
     current = current[key]
   }
 
-  // TODO: need to either read & return || write & return here
-  console.log(current)
+  // write & return or read & return
+  if (value) {
+    current = value
+    return value
+  } else {
+    return current
+  }
 }
 
 export default deep
