@@ -33,6 +33,8 @@ const get = (obj, str, val) => {
 
 export { get }
 
+// FIXME: fill set out, backspace deep
+
 const set = (obj, str, val) => {
 
 }
