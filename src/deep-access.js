@@ -37,37 +37,23 @@ export { get }
 
 const set = (obj, str, val) => {
   // dot notation string -> array of keys
-  const keys = Array.isArray(str)
-    ? str
-    : str.split('.')
+  const keys = str.split('.')
 
   // length of keys array
   const len = keys.length
 
-  // run through keys
-  // store reference to object
+  // loop through keys, updating the object reference to child objects
   let current = obj
-
-  // loop vars
-  let index
   let key
 
-  for (index = 0; index < len; index++) {
+  for (let index = 0; index < len; index++) {
     // current key name
     key = keys[index]
 
-    // make key an empty object if it doesnt exist
-    if (!current[key]) {
-      current[key] = {}
-    }
-
-    if (index !== len - 1) {
-      // update reference
-      current = current[key]
-    } else {
-      // set value
-      current[key] = val
-    }
+    // set value on last key
+    index === len - 1
+      ? current[key] = val
+      : current = current[key] || {}
   }
 
   return current
