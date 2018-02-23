@@ -36,16 +36,10 @@ export { get }
 // FIXME: fill set out, backspace deep
 
 const set = (obj, str, val) => {
-
-}
-
-export { set }
-
-const deep = (obj, dots, value) => {
   // dot notation string -> array of keys
-  const keys = Array.isArray(dots)
-    ? dots
-    : dots.split('.')
+  const keys = Array.isArray(str)
+    ? str
+    : str.split('.')
 
   // length of keys array
   const len = keys.length
@@ -67,17 +61,16 @@ const deep = (obj, dots, value) => {
       current[key] = {}
     }
 
-    // update reference
-    current = current[key]
+    if (index !== len - 1) {
+      // update reference
+      current = current[key]
+    } else {
+      // set value
+      current[key] = val
+    }
   }
 
-  // write & return or read & return
-  if (value) {
-    current = value
-    return value
-  } else {
-    return current
-  }
+  return current
 }
 
-export default deep
+export { set }
