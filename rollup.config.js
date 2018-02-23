@@ -4,7 +4,7 @@ import resolve from 'rollup-plugin-node-resolve'
 const info = require('./package.json')
 
 const config = {
-  input: 'src/deep-access.js',
+  input: 'src/dotnot.js',
   plugins: [
     resolve(),
     babel({
@@ -28,7 +28,7 @@ const config = {
     {
       file: info.main,
       format: 'umd',
-      name: 'DeepAccess'
+      name: 'Dotnot'
     }, {
       file: info.module,
       format: 'es'

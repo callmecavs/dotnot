@@ -1,10 +1,10 @@
 {
-  "name":        "deep-access",
+  "name":        "dotnot",
   "description": "",
 
-  "main":        "dist/deep-access.js",
-  "module":      "dist/deep-access.module.js",
-  "jsnext:main": "dist/deep-access.module.js",
+  "main":        "dist/dotnot.js",
+  "module":      "dist/dotnot.module.js",
+  "jsnext:main": "dist/dotnot.module.js",
 
   "version": "0.0.1",
   "license": "",
