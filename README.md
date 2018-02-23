@@ -17,6 +17,28 @@ import {
   get,
   set
 } from 'dotnot'
+
+const data = {
+  a: {
+    b: {
+      c: {
+        d: 1
+      }
+    }
+  },
+  e: 1
+}
+
+get(data, 'a.b')             // returns { c: { d: 1 } }
+get(data, 'a.b.c')           // returns { d: 1 }
+get(data, 'a.b.c.d')         // returns 1
+get(data, 'a.c')             // returns undefined
+get(data, 'a.b.d')           // returns undefined
+get(data, 'a.b.c.e')         // returns undefined
+
+set(data, 'a.c', 1)             // returns 1
+set(data, 'a.b.d', 1)           // returns 1
+set(data, 'a.b.c.e', 1)         // returns 1
 ```
 
 ## License
