@@ -24,12 +24,12 @@
       }
 
       // read
-      console.log('Read: ', DeepAccess(test, 'a.b'))         // expect { c: { d: 1 } }
-      console.log('Read: ', DeepAccess(test, 'a.b.c'))       // expect { d: 1 }
-      console.log('Read: ', DeepAccess(test, 'a.b.c.d'))     // expect 1
+      console.log('Read: ', DeepAccess.get(test, 'a.b'))         // expect { c: { d: 1 } }
+      console.log('Read: ', DeepAccess.get(test, 'a.b.c'))       // expect { d: 1 }
+      console.log('Read: ', DeepAccess.get(test, 'a.b.c.d'))     // expect 1
 
       // write
-      console.log('Write: ', DeepAccess(test, 'a.b.c2', 1))          // expect 1
+      // console.log('Write: ', DeepAccess(test, 'a.b.c2', 1))          // expect 1
     </script>
   </body>
 </html>
