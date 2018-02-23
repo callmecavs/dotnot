@@ -16,20 +16,14 @@ const TEST = {
 
 describe('deep-access', () => {
   it('should read child objects', () => {
-    const expect1 = {
-      c: {
-        d: 1
-      }
-    }
+    expect(access.get(TEST, 'a.b')).to.deep.equal({ c: { d: 1 } })
+    expect(access.get(TEST, 'a.b.c')).to.deep.equal({ d: 1 })
+    expect(access.get(TEST, 'a.b.c.d')).to.deep.equal(1)
+  })
 
-    const expect2 = {
-      d: 1
-    }
-
-    const expect3 = 1
-
-    expect(access.get(TEST, 'a.b')).to.deep.equal(expect1)
-    expect(access.get(TEST, 'a.b.c')).to.deep.equal(expect2)
-    expect(access.get(TEST, 'a.b.c.d')).to.deep.equal(expect3)
+  it('should return undefined if reading is not possible ', () => {
+    expect(access.get(TEST, 'a.c')).to.deep.equal(undefined)
+    expect(access.get(TEST, 'a.b.d')).to.deep.equal(undefined)
+    expect(access.get(TEST, 'a.b.c.e')).to.deep.equal(undefined)
   })
 })
