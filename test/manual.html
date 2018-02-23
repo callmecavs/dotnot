@@ -24,9 +24,9 @@
       }
 
       // read
-      DeepAccess(test, 'a.b')              // expect { c: { d: 1 } }
-      DeepAccess(test, 'a.b.c')            // expect { d: 1 }
-      DeepAccess(test, 'a.b.c.d')          // expect 1
+      console.log('Read: ', DeepAccess(test, 'a.b'))         // expect { c: { d: 1 } }
+      console.log('Read: ', DeepAccess(test, 'a.b.c'))       // expect { d: 1 }
+      console.log('Read: ', DeepAccess(test, 'a.b.c.d'))     // expect 1
 
       // TODO: write
     </script>
