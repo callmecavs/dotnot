@@ -1,4 +1,4 @@
-const get = (obj, str) => {
+export const get = (obj, str) => {
   // dot notation string -> array of keys
   const keys = str.split('.')
 
@@ -24,9 +24,7 @@ const get = (obj, str) => {
   return current
 }
 
-export { get }
-
-const set = (obj, str, val) => {
+export const set = (obj, str, val) => {
   // dot notation string -> array of keys
   const keys = str.split('.')
 
@@ -49,5 +47,3 @@ const set = (obj, str, val) => {
 
   return current
 }
-
-export { set }
