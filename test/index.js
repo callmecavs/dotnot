@@ -15,27 +15,21 @@ const TEST = {
 /* eslint-env mocha */
 
 describe('deep-access', () => {
-  it('should read 1 level deep', () => {
-    const expected = {
+  it('should read child objects', () => {
+    const expect1 = {
       c: {
         d: 1
       }
     }
 
-    expect(access.get(TEST, 'a.b')).to.deep.equal(expected)
-  })
-
-  it('should read 2 levels deep', () => {
-    const expected = {
+    const expect2 = {
       d: 1
     }
 
-    expect(access.get(TEST, 'a.b.c')).to.deep.equal(expected)
-  })
+    const expect3 = 1
 
-  it('should read 3 levels deep', () => {
-    const expected = 1
-
-    expect(access.get(TEST, 'a.b.c.d')).to.deep.equal(expected)
+    expect(access.get(TEST, 'a.b')).to.deep.equal(expect1)
+    expect(access.get(TEST, 'a.b.c')).to.deep.equal(expect2)
+    expect(access.get(TEST, 'a.b.c.d')).to.deep.equal(expect3)
   })
 })
