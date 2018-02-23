@@ -44,16 +44,16 @@ const set = (obj, str, val) => {
 
   // loop through keys, updating the object reference to child objects
   let current = obj
-  let key
+  let name
 
   for (let index = 0; index < len; index++) {
     // current key name
-    key = keys[index]
+    name = keys[index]
 
     // set value on last key
     index === len - 1
-      ? current[key] = val
-      : current = current[key] || {}
+      ? current[name] = val
+      : current = current[name] || {}
   }
 
   return current
