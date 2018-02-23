@@ -28,7 +28,8 @@
       console.log('Read: ', DeepAccess(test, 'a.b.c'))       // expect { d: 1 }
       console.log('Read: ', DeepAccess(test, 'a.b.c.d'))     // expect 1
 
-      // TODO: write
+      // write
+      console.log('Write: ', DeepAccess(test, 'a.b.c2', 1))          // expect 1
     </script>
   </body>
 </html>
