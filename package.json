@@ -6,15 +6,15 @@
   "module":      "dist/dotnot.module.js",
   "jsnext:main": "dist/dotnot.module.js",
 
-  "version": "0.0.1",
-  "license": "",
+  "version": "0.0.2",
+  "license": "MIT",
 
-  "repository": "",
+  "repository": "callmecavs/dotnot",
 
   "author": {
-    "name":  "",
-    "email": "",
-    "url":   ""
+    "name":  "Michael Cavalea",
+    "email": "callmecavs@gmail.com",
+    "url":   "http://callmecavs.com/"
   },
 
   "scripts": {
